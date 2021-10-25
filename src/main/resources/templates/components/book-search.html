@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div th:fragment="search-panel">
+    <form action="/search" th:attr="action=@{/search}">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search book" aria-label="Search book query"
+                   name="query" aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
