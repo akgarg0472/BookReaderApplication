@@ -21,6 +21,7 @@ target/
 *.yml
 *.properties
 *.yaml
+*.zip
 
 ### NetBeans ###
 /nbproject/private/
