@@ -16,12 +16,11 @@ import java.util.Optional;
 
 // OL10005999W
 
-@SuppressWarnings({"SpringJavaAutowiredFieldsWarningInspection", "FieldCanBeLocal", "HttpUrlsUsage"})
+@SuppressWarnings({"FieldCanBeLocal", "HttpUrlsUsage"})
 @Controller
 public class BookController {
 
-    private final String COVER_IMAGE_ROOT = "http://covers.openlibrary.org/b/id/";
-
+    private final String COVER_IMAGE_ROOT;
     private final BookRepository bookRepository;
     private final UserBooksRepository userBooksRepository;
 
@@ -30,6 +29,7 @@ public class BookController {
                           UserBooksRepository userBooksRepository) {
         this.bookRepository = bookRepository;
         this.userBooksRepository = userBooksRepository;
+        this.COVER_IMAGE_ROOT = "http://covers.openlibrary.org/b/id/";
     }
 
     @RequestMapping(value = "/books/{bookId}", method = RequestMethod.GET)

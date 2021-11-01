@@ -2,6 +2,7 @@ package com.akgarg.bookreader.book;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.CassandraType;
 import org.springframework.data.cassandra.core.mapping.Column;
@@ -39,6 +40,9 @@ public class Book {
     @Column("cover_id")
     @CassandraType(type = CassandraType.Name.LIST, typeArguments = CassandraType.Name.TEXT)
     private List<String> coverIds;
+
+    @Transient
+    private String coverId;
 
     @Column("author_names")
     @CassandraType(type = CassandraType.Name.LIST, typeArguments = CassandraType.Name.TEXT)
